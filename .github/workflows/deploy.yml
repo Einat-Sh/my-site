@@ -31,7 +31,7 @@ jobs:
 
       # Run Vitest (unit tests)
       - name: Run Unit Tests
-        run: npm run test
+        run: NODE_ENV=test npm run test
 
       # Build the Vite site
       - name: Build Vite site
