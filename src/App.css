@@ -1,0 +1,121 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.page-wrapper {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-button {
+  position: fixed; 
+  right: 20px;
+  top: 90%;
+  transform: translateY(-50%); 
+  z-index: 1000;
+}
+
+.border-shadow {
+  border: 2px solid transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  border-radius: 8px;
+  margin: 4%;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.vertical-line-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95%; 
+  position: relative;
+  margin-top: 20px;
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  background-color: #4a808c;
+}
+
+.d {
+  background-color: #61dafbaa;
+}
+
+.vertical-line {
+  width: 4px;
+  flex-grow: 1;
+  margin-top: -2px; 
+  z-index: 1;
+  background-color: #4a808c;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+#card-dark {
+  background-color: #454c5c;
+  color: white;
+}
+
+#card-light {
+  background-color: #fffffe;
+  color: black;
+  border-color: #adbee552;
+}
+
+.icon-link {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  color: black;
+  font-size: 3.5vw;
+  padding: 2%;
+}
+
+.read-the-docs {
+  color: #888;
+}
