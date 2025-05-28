@@ -122,7 +122,7 @@ function CVPage() {
                             </p>
                             <h6>Worked with:</h6><br/>
                             <Stack direction="horizontal" gap={2} style={{fontSize: "18px", margin: '0 auto', flexWrap: 'wrap'}} className="justify-content-left">
-                                {['Bash', 'Python', 'AWS', 'Docker', 'Kubernetes', 'Hadoop', 'Oozie', 'Yamas', 'Splunk', 'Git', 'Jira', 'ServiceNow', 'Screwdriver.cd'].map(i => (<Badge bg="secondary">{i}</Badge>))}
+                                {['Bash', 'Python', 'AWS', 'Docker', 'Kubernetes', 'Hadoop', 'Oozie', 'Yamas', 'Splunk', 'Git', 'Jira', 'ServiceNow', 'Screwdriver.cd'].map((i, index) => (<Badge bg="secondary" key={`stack1-${index}`}>{i}</Badge>))}
                             </Stack>
                         </Col>  
                         
@@ -140,7 +140,7 @@ function CVPage() {
                             </p>
                             <h6>Worked with:</h6><br/>
                             <Stack direction="horizontal" gap={2} style={{fontSize: "18px", margin: '0 auto', flexWrap: 'wrap'}} className="justify-content-left">
-                                {['Bash', 'Python', 'SQL', 'Hadoop', 'Oozie', 'Yamas', 'Splunk', 'Splunk', 'Git', 'Jira', 'ServiceNow', 'Screwdriver.cd'].map(i => (<Badge bg="secondary">{i}</Badge>))}
+                                {['Bash', 'Python', 'SQL', 'Hadoop', 'Oozie', 'Yamas', 'Splunk', 'Splunk', 'Git', 'Jira', 'ServiceNow', 'Screwdriver.cd'].map((i, index) => (<Badge bg="secondary" key={`stack2-${index}`}>{i}</Badge>))}
                             </Stack>
                             <br/>
                         </Col>
@@ -152,7 +152,7 @@ function CVPage() {
             <Row className="border-shadow">
                 <h2 style={{padding: "1%"}}><VscTools/> Technical Skills & Tools</h2>
                 <Stack direction="horizontal" gap={2} style={{fontSize: "18px", margin: '0 auto', flexWrap: 'wrap'}} className="justify-content-center">
-                    {['Docker', 'Kubernetes', 'AWS', 'Shell Scripting', 'Python', 'React', 'HTML', 'Javascript', 'CSS', 'HDFS', 'Storm', 'Oozie', 'Hbase', 'C', 'C++', 'C#', 'Java', 'Typescript'].map(i => (<Badge bg="secondary" data-testid='skill-badge-test-id'>{i}</Badge>))}
+                    {['Docker', 'Kubernetes', 'AWS', 'Shell Scripting', 'Python', 'React', 'HTML', 'Javascript', 'CSS', 'HDFS', 'Storm', 'Oozie', 'Hbase', 'C', 'C++', 'C#', 'Java', 'Typescript'].map((i, index) => (<Badge bg="secondary" data-testid='skill-badge-test-id' key={`stack3-${index}`}>{i}</Badge>))}
                 </Stack>
             </Row>
 
