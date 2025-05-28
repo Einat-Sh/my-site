@@ -4,6 +4,7 @@ import { render, screen } from '@testing-library/react';
 import CVPage from '../pages/CV';
 import { ThemeProvider } from '../context/themeProvider'; // Fixed path
 import { userEvent } from '@testing-library/user-event';
+import { waitFor } from '@testing-library/react';
 
 describe('CV', () => {
   beforeEach(() => {
@@ -74,11 +75,11 @@ describe('CV', () => {
     expect(screen.getByTestId('card-1-test-id')).toBeVisible();
     const nextButton = screen.getByLabelText('Slide 2');
     await user.click(nextButton);
-    expect(screen.getByTestId('card-2-test-id')).toBeVisible();
+    waitFor(() =>{expect(screen.getByTestId('card-2-test-id')).toBeVisible();});
     // check if moving from slide 2 to slide 1 works
     const prevButton = screen.getByLabelText('Slide 1');
     await user.click(prevButton);
-    expect(screen.getByTestId('card-1-test-id')).toBeVisible();
+    waitFor(() =>{expect(screen.getByTestId('card-1-test-id')).toBeVisible();});
   });
 
   it('check the experience section exists', () => {

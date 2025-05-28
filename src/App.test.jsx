@@ -5,8 +5,8 @@ import App from './App';
 import { ThemeProvider } from './context/themeProvider'; // Fixed path
 import { MemoryRouter } from 'react-router-dom';
 import { userEvent } from '@testing-library/user-event';
+import { waitFor } from '@testing-library/react';
 
-try{
 describe('App', () => {
   beforeEach(() => {
     localStorage.clear(); // Reset before each test
@@ -75,7 +75,12 @@ describe('App', () => {
     const user = userEvent.setup();
     const button = screen.getByTestId('theme-button-test-id');
     await user.click(button);
-    expect(document.body).toHaveClass('dark');
+    waitFor(() => {expect(document.body).toHaveClass('dark');});
+    // for debug
+    console.log('window:', typeof window);
+    console.log('document:', typeof document);
+    console.log('navigator:', window.navigator);
+    console.log('PointerEvent:', typeof PointerEvent);
   });
 
   it('check CVPage renders on "/" route', () => {
@@ -102,7 +107,3 @@ describe('App', () => {
     expect(screen.getByText(/not found/i)).toBeInTheDocument();
   });
 });
-} catch(err) {
-  console.error('Error caught:', err.stack || err);
-  throw err;
-}

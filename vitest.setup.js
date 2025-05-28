@@ -40,3 +40,20 @@ if (!globalThis.document) {
     },
   };
 };
+
+// mock pointerEvent for userEvent
+if (typeof PointerEvent === 'undefined') {
+  globalThis.PointerEvent = function () {};
+}
+
+// mock HTMLElement for userEvent 
+globalThis.HTMLElement = globalThis.HTMLElement || function () {};
+
+// mock window.matchMedia for userEvent
+globalThis.window.matchMedia = globalThis.window.matchMedia || function () {
+  return {
+    matches: false,
+    addListener: vi.fn(),
+    removeListener: vi.fn(),
+  };
+};
