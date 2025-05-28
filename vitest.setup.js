@@ -11,6 +11,9 @@ const localStorageMock = {
 };
 globalThis.localStorage = localStorageMock;
 
+// Ensure window is defined
+globalThis.window = globalThis;
+
 // Mock document methods used in your theme provider
 Object.defineProperty(document, 'documentElement', {
   value: {
@@ -25,4 +28,15 @@ Object.defineProperty(document, 'documentElement', {
 globalThis.navigator = {
   userAgent: 'node.js',
   platform: 'Linux',
+};
+
+// Mock document.classList
+if (!globalThis.document) {
+  globalThis.document = {
+    documentElement: {
+      classList: {
+        toggle: vi.fn(),
+      },
+    },
+  };
 };
