@@ -65,6 +65,13 @@ describe('App', () => {
   });
 
   it('toggles to dark mode and check the background color changed', async () => {
+    // for debug
+    console.log('window:', typeof window);
+    console.log('document:', typeof document);
+    console.log('navigator:', window.navigator);
+    console.log('PointerEvent:', typeof PointerEvent);
+    console.log('localStorage:', globalThis.localStorage);
+    console.log('_version:', globalThis.localStorage._version);
     render(
       <ThemeProvider>
         <MemoryRouter>
@@ -76,11 +83,6 @@ describe('App', () => {
     const button = screen.getByTestId('theme-button-test-id');
     await user.click(button);
     waitFor(() => {expect(document.body).toHaveClass('dark');});
-    // for debug
-    console.log('window:', typeof window);
-    console.log('document:', typeof document);
-    console.log('navigator:', window.navigator);
-    console.log('PointerEvent:', typeof PointerEvent);
   });
 
   it('check CVPage renders on "/" route', () => {
