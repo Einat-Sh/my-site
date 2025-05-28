@@ -6,6 +6,7 @@ import { ThemeProvider } from './context/themeProvider'; // Fixed path
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 
+try{
 describe('App', () => {
   beforeEach(() => {
     localStorage.clear(); // Reset before each test
@@ -101,3 +102,7 @@ describe('App', () => {
     expect(screen.getByText(/not found/i)).toBeInTheDocument();
   });
 });
+} catch(err) {
+  console.error('Error caught:', err.stack || err);
+  throw err;
+}
