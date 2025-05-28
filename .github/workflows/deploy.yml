@@ -2,9 +2,9 @@ name: Test and Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [gh-site]
   pull_request:
-    branches: [main]
+    branches: [gh-site]
 
 jobs:
   build-test-deploy:
