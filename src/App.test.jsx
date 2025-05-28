@@ -72,6 +72,7 @@ describe('App', () => {
     console.log('PointerEvent:', typeof PointerEvent);
     console.log('localStorage:', globalThis.localStorage);
     console.log('_version:', globalThis.localStorage._version);
+    
     render(
       <ThemeProvider>
         <MemoryRouter>

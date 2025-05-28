@@ -3,15 +3,14 @@ import '@testing-library/jest-dom';
 
 // Mock localStorage
 const localStorageMock = {
-  getItem: vi.fn(),
+  getItem: vi.fn().mockImplementation(() => null),
   setItem: vi.fn(),
   removeItem: vi.fn(),
   clear: vi.fn(),
   _version: 'mock'
 };
 globalThis.localStorage = localStorageMock;
-
-// Ensure window is defined
+globalThis.window.localStorage = localStorageMock;
 globalThis.window = globalThis;
 
 // Mock document methods used in your theme provider
