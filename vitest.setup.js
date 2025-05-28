@@ -7,6 +7,7 @@ const localStorageMock = {
   setItem: vi.fn(),
   removeItem: vi.fn(),
   clear: vi.fn(),
+  _version: 'mock'
 };
 globalThis.localStorage = localStorageMock;
 
@@ -19,3 +20,9 @@ Object.defineProperty(document, 'documentElement', {
   },
   writable: true,
 });
+
+// mock user
+globalThis.navigator = {
+  userAgent: 'node.js',
+  platform: 'Linux',
+};

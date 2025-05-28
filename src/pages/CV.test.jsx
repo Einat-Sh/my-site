@@ -3,7 +3,7 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import CVPage from '../pages/CV';
 import { ThemeProvider } from '../context/themeProvider'; // Fixed path
-import userEvent from '@testing-library/user-event';
+import { userEvent } from '@testing-library/user-event';
 
 describe('CV', () => {
   beforeEach(() => {

@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import { ThemeProvider } from './context/themeProvider'; // Fixed path
 import { MemoryRouter } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
+import { userEvent } from '@testing-library/user-event';
 
 try{
 describe('App', () => {
