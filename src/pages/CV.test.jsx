@@ -6,6 +6,9 @@ import { ThemeProvider } from '../context/themeProvider'; // Fixed path
 import { userEvent } from '@testing-library/user-event';
 import { waitFor } from '@testing-library/react';
 
+console.log('Before test — localStorage:', window.localStorage);
+console.log('Before test — _version:', window.localStorage._version);
+
 describe('CV', () => {
   beforeEach(() => {
     localStorage.clear(); // Reset before each test
