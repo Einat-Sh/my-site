@@ -6,9 +6,6 @@ import { ThemeProvider } from '../context/themeProvider'; // Fixed path
 import { userEvent } from '@testing-library/user-event';
 import { waitFor } from '@testing-library/react';
 
-console.log('Before test — localStorage:', window.localStorage);
-console.log('Before test — _version:', window.localStorage._version);
-
 describe('CV', () => {
   beforeEach(() => {
     localStorage.clear(); // Reset before each test
@@ -68,11 +65,6 @@ describe('CV', () => {
   });
 
   it('check project carousel can switch cards to the next/previous card', async () => {
-    // for debug
-    console.log('localStorage:', globalThis.localStorage);
-    console.log('_version:', globalThis.localStorage._version);
-    console.log(Object.getOwnPropertyNames(localStorage));
-
     render(
       <ThemeProvider>
         <CVPage />

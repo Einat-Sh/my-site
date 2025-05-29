@@ -2,10 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import eslint from 'vite-plugin-eslint';
 
-const isTest = process.env.NODE_ENV === 'test'
-
 export default defineConfig({
-  plugins: isTest ? [react()] : [react(), eslint()],
+  plugins: [react(), eslint()],
   test: {
     globals: true,
     environment: 'jsdom',

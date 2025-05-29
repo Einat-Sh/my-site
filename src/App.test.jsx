@@ -65,10 +65,6 @@ describe('App', () => {
   });
 
   it('toggles to dark mode and check the background color changed', async () => {
-    // for debug
-    console.log('localStorage:', globalThis.localStorage);
-    console.log('_version:', globalThis.localStorage._version);
-    
     render(
       <ThemeProvider>
         <MemoryRouter>
