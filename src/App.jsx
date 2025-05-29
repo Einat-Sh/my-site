@@ -13,16 +13,17 @@ import { useTheme } from './context/useTheme'
 
 function App() {
   const { darkMode, toggleDarkMode } = useTheme();
+  const baseUrl = import.meta.env.BASE_URL;
 
   const NavigationBar = () => (
     <Navbar fixed="top" expand="lg" className="bg-body-tertiary" bg={darkMode ? "dark" : "light"} data-bs-theme={darkMode ? "dark" : "light"} style={{opacity: "95%"}} data-testid="navbar-test-id">
       <Container>
-        <Navbar.Brand href="/">My Site</Navbar.Brand>
+        <Navbar.Brand href={baseUrl + "/"}>My Site</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/about">About</Nav.Link>
+            <Nav.Link href={baseUrl + "/"}>Home</Nav.Link>
+            <Nav.Link href={baseUrl + "/about"}>About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
