@@ -1,6 +1,6 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -13,17 +13,16 @@ import { useTheme } from './context/useTheme'
 
 function App() {
   const { darkMode, toggleDarkMode } = useTheme();
-  const baseUrl = import.meta.env.BASE_URL;
 
   const NavigationBar = () => (
     <Navbar fixed="top" expand="lg" className="bg-body-tertiary" bg={darkMode ? "dark" : "light"} data-bs-theme={darkMode ? "dark" : "light"} style={{opacity: "95%"}} data-testid="navbar-test-id">
       <Container>
-        <Navbar.Brand href={baseUrl}>My Site</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to="/">My Site</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href={baseUrl}>Home</Nav.Link>
-            <Nav.Link href={baseUrl + "about"}>About</Nav.Link>
+            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/about">About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
