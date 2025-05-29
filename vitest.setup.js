@@ -51,3 +51,9 @@ globalThis.window.matchMedia = globalThis.window.matchMedia || function () {
     removeListener: vi.fn(),
   };
 };
+
+// explicitly define _version
+Object.defineProperty(globalThis.localStorage, '_version', {
+  value: 'mock-version',
+  writable: true,
+});

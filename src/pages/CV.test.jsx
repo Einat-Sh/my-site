@@ -65,6 +65,11 @@ describe('CV', () => {
   });
 
   it('check project carousel can switch cards to the next/previous card', async () => {
+    // for debug
+    console.log('localStorage:', globalThis.localStorage);
+    console.log('_version:', globalThis.localStorage._version);
+    console.log(Object.getOwnPropertyNames(localStorage));
+
     render(
       <ThemeProvider>
         <CVPage />
@@ -75,11 +80,11 @@ describe('CV', () => {
     expect(screen.getByTestId('card-1-test-id')).toBeVisible();
     const nextButton = screen.getByLabelText('Slide 2');
     await user.click(nextButton);
-    waitFor(() =>{expect(screen.getByTestId('card-2-test-id')).toBeVisible();});
+    await waitFor(() =>{expect(screen.getByTestId('card-2-test-id')).toBeVisible();});
     // check if moving from slide 2 to slide 1 works
     const prevButton = screen.getByLabelText('Slide 1');
     await user.click(prevButton);
-    waitFor(() =>{expect(screen.getByTestId('card-1-test-id')).toBeVisible();});
+    await waitFor(() =>{expect(screen.getByTestId('card-1-test-id')).toBeVisible();});
   });
 
   it('check the experience section exists', () => {

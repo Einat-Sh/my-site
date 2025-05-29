@@ -79,7 +79,7 @@ describe('App', () => {
     const user = userEvent.setup();
     const button = screen.getByTestId('theme-button-test-id');
     await user.click(button);
-    waitFor(() => {expect(document.body).toHaveClass('dark');});
+    await waitFor(() => {expect(document.body).toHaveClass('dark');});
   });
 
   it('check CVPage renders on "/" route', () => {
