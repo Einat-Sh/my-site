@@ -2,16 +2,11 @@ import { vi } from 'vitest';
 import '@testing-library/jest-dom';
 
 // Mock localStorage
-const localStorageMock = {
-  getItem: vi.fn().mockImplementation(() => null),
-  setItem: vi.fn(),
-  removeItem: vi.fn(),
-  clear: vi.fn(),
-  _version: 'mock'
-};
-globalThis.localStorage = localStorageMock;
-globalThis.window.localStorage = localStorageMock;
-globalThis.window = globalThis;
+vi.spyOn(window.localStorage.__proto__, 'getItem').mockImplementation(() => null);
+vi.spyOn(window.localStorage.__proto__, 'setItem').mockImplementation(() => {});
+vi.spyOn(window.localStorage.__proto__, 'removeItem').mockImplementation(() => {});
+vi.spyOn(window.localStorage.__proto__, 'clear').mockImplementation(() => {});
+window.localStorage._version = 'mock-version';
 
 // Mock document methods used in your theme provider
 Object.defineProperty(document, 'documentElement', {
@@ -56,9 +51,3 @@ globalThis.window.matchMedia = globalThis.window.matchMedia || function () {
     removeListener: vi.fn(),
   };
 };
-
-// explicitly define _version
-Object.defineProperty(globalThis.localStorage, '_version', {
-  value: 'mock-version',
-  writable: true,
-});
