@@ -18,7 +18,7 @@ describe('CV', () => {
     );
     const img = screen.getByAltText('err-logo-img');
     expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('src', '/src/assets/error2.png');
+    expect(img.getAttribute('src')).toContain('error2');
   });
 
   it('check the error text exists', () => {

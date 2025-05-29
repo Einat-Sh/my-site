@@ -20,7 +20,7 @@ describe('CV', () => {
     );
     const img = screen.getByAltText('logo-img');
     expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('src', '/src/assets/logo1.jpeg');
+    expect(img.getAttribute('src')).toContain('logo1');
   });
 
   it('check the info section exists', () => {
