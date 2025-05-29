@@ -7,7 +7,6 @@ import Badge from 'react-bootstrap/Badge';
 import Stack from 'react-bootstrap/Stack';
 import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card';
-// import Button from 'react-bootstrap/Button';
 import { useTheme } from '../context/useTheme'
 
 // icons import
@@ -69,15 +68,13 @@ function CVPage() {
                 <Carousel className="w-100 text-center" data-bs-theme="dark" interval={null} data-testid='project-crsl-test-id' >
                     <Carousel.Item data-testid='card-1-test-id' >
                         <Card className="text-center" id={darkMode ? "card-dark" : "card-light"} data-testid='carousel-card'>
-                            {/* <Card.Header>My Site</Card.Header> */}
                             <Card.Body>
                                 <Card.Title>My Site </Card.Title>
                                 <Card.Text>
                                     This site was made using Next.js with Vite and deployed on GitHub pages using GitHub actions.
                                     <br/><br/>
                                     Following the build stage, both lint tests and jest tests are run before deployment is done.
-                                    {/* TODO:: update link once repo is set up */}
-                                    <br/><br/><a href="https://github.com/Einat-Sh/" target="_blank" rel="noopener noreferrer" style={{ border: 'none', backgroundColor: 'transparent', boxShadow: 'none' , color: 'black', fontSize: "2vw"}} ><FaGithub /></a>
+                                    <br/><br/><a href="https://github.com/Einat-Sh/my-site" target="_blank" rel="noopener noreferrer" style={{ border: 'none', backgroundColor: 'transparent', boxShadow: 'none' , color: 'black', fontSize: "2vw"}} ><FaGithub /></a>
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="d-flex justify-content-center" style={{ overflow: 'hidden' }}>
@@ -87,7 +84,6 @@ function CVPage() {
                     </Carousel.Item>
                     <Carousel.Item data-testid='card-2-test-id'>
                         <Card className="text-center" id={darkMode ? "card-dark" : "card-light"} data-testid='carousel-card'>
-                            {/* <Card.Header>Chatroom</Card.Header> */}
                             <Card.Body>
                                 <Card.Title>Chatroom</Card.Title>
                                 <Card.Text>

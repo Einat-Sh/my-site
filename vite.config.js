@@ -9,6 +9,7 @@ export default defineConfig({
     environment: 'jsdom',
     include: ['src/**/*.test.jsx'],
     exclude: ['node_modules', 'dist'],
-    setupFiles: ['./vitest.setup.js']
+    setupFiles: ['./vitest.setup.js'],
+    base: '/my-site/'
   }
 })
