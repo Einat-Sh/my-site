@@ -53,10 +53,15 @@ globalThis.window.matchMedia = globalThis.window.matchMedia || function () {
 };
 
 // explicitly define _version
-Object.defineProperty(window.localStorage, '_version', {
-  get() {
-    console.trace('Reading localStorage._version');
-    return 'mock-version';
-  },
-  configurable: true,
+Object.defineProperty(globalThis.localStorage, '_version', {
+  value: 'mock-version',
+  writable: true,
 });
+
+// Object.defineProperty(window.localStorage, '_version', {
+//   get() {
+//     console.trace('Reading localStorage._version');
+//     return 'mock-version';
+//   },
+//   configurable: true,
+// });
