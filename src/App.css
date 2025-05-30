@@ -52,16 +52,16 @@
   background-color: #4a808c;
 }
 
-.d {
-  background-color: #61dafbaa;
-}
-
 .vertical-line {
   width: 4px;
   flex-grow: 1;
   margin-top: -2px; 
   z-index: 1;
   background-color: #4a808c;
+}
+
+.line-color {
+  background-color: #518fc2;
 }
 
 .logo {
@@ -111,11 +111,38 @@
   border: none;
   background-color: transparent;
   box-shadow: none;
-  color: black;
-  font-size: 3.5vw;
+  color: #515b70;
+  font-size: 200%;
   padding: 2%;
+}
+
+.light-ibg {
+  color: #b6c6ec;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.responsive-h1 {
+  font-size: 2rem;
+}
+
+.responsive-p {
+  font-size: 1rem;
+}
+
+/* laptops and above */
+@media (min-width: 768px) {
+  .responsive-h1 {
+    font-size: 3rem;
+  }
+
+  .responsive-p {
+    font-size: 1.5rem;
+  }
+}
+
+.space {
+  margin-bottom: 0.5rem;
 }

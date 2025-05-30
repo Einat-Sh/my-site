@@ -6,19 +6,19 @@ import Image from 'react-bootstrap/Image';
 import errorLogo from '../assets/error2.png'
 
 const NotFoundPage = () => (
-  <Container fluid style={{ width: '80%', margin: '0 auto' }} >
-    <br/>
+  <Container fluid style={{ width: '100%', margin: '0 auto', padding: '0' }} >
     {/* Logo */}
-    <Row style={{ width: '20%', margin: '0 auto', marginTop: '5%' }}>
-      <Col>
+    <Row className="justify-content-center" style={{ width: '35%', margin: '0 auto' }}>
+      <Col className="text-center">
           <Image src={errorLogo} fluid alt='err-logo-img' />
       </Col>
     </Row>
-    <Row>
-      <h1>Oops! Page Not Found</h1>
-      <br/>
-      <h5>Looks like this page decided to take an unscheduled deployment break!</h5>
-      <h5>Don't worry, even the best infrastructure has occasional hiccups.</h5>
+    <Row className="justify-content-center" style={{padding: '0', margin: '0'}}>
+      <Col xs={12} sm={12} style={{ paddingBottom: 0 }}>
+        <h1 className="responsive-h1" style={{ marginBottom: '2rem' }}>Oops! Page Not Found</h1>
+        <p  className="responsive-p" style={{ marginBottom: '1rem' }}>Looks like this page decided to take an unscheduled deployment break!</p>
+        <p  className="responsive-p" >Don't worry, even the best infrastructure has occasional hiccups.</p>
+      </Col>
     </Row>
   </Container>
 );

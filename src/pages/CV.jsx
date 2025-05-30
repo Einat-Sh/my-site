@@ -48,7 +48,7 @@ function CVPage() {
         <Container fluid style={{ width: '90%', margin: '0 auto' }} >
             <br/>
             {/* Logo */}
-            <Row style={{ width: '30%', margin: '0 auto', marginBottom: '1rem' }}>
+            <Row style={{ width: '50%', margin: '0 auto', marginBottom: '1rem' }}>
                 <Col>
                     <Image src={logo1} roundedCircle fluid alt='logo-img' />
                 </Col>
@@ -58,7 +58,8 @@ function CVPage() {
             <Row className="border-shadow">
                 <h1>Einat Shoval</h1>
                 <h5>DevOps Engineer</h5>
-                <p>Passionate DevOps engineer with experience in automation, continuous integration/deployment and cloud infrastructure. <br/>Currently expanding expertise in cloud technologies, containerization, and CI/CD practices. Eager to learn more, develop and grow as a DevOps engineer.</p>
+                <p>I'm a passionate DevOps engineer with experience in automation, continuous integration/deployment and cloud infrastructure. 
+                <br/><br/>Currently I'm expanding expertise in cloud technologies, containerization, and CI/CD practices. Eager to learn more, develop and grow as an engineer.</p>
             </Row>
 
             {/* Projects */}
@@ -71,10 +72,16 @@ function CVPage() {
                             <Card.Body>
                                 <Card.Title>My Site </Card.Title>
                                 <Card.Text>
-                                    This site was made using Next.js with Vite and deployed on GitHub pages using GitHub actions.
-                                    <br/><br/>
-                                    Following the build stage, both lint tests and jest tests are run before deployment is done.
-                                    <br/><br/><a href="https://github.com/Einat-Sh/my-site" target="_blank" rel="noopener noreferrer" style={{ border: 'none', backgroundColor: 'transparent', boxShadow: 'none' , color: 'black', fontSize: "2vw"}} ><FaGithub /></a>
+                                    <p className='p-space'>
+                                        A simple, responsive CV website built with Next.js and Vite.
+                                    </p>
+                                    <p className='p-space'>
+                                        The site deployed to GitHub pages using GitHub actions.
+                                    </p>
+                                    <p className='p-space'>
+                                        Following the build stage, both lint tests and jest tests are run before deployment is done.
+                                    </p>
+                                    <a className={darkMode ? 'icon-link light-ibg': 'icon-link'} href="https://github.com/Einat-Sh/my-site" target="_blank" rel="noopener noreferrer" ><FaGithub /></a>
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="d-flex justify-content-center" style={{ overflow: 'hidden' }}>
@@ -90,7 +97,7 @@ function CVPage() {
                                     Simple .NET Windows application in C# for a chatroom.
                                     <br/><br/>
                                     UI framework used: Windows Presentation Foundation (WPF).
-                                    <br/><br/><a className='icon-link' href="https://github.com/Einat-Sh/GameOfChatRooms" target="_blank" rel="noopener noreferrer" ><FaGithub /></a>
+                                    <br/><br/><a className={darkMode ? 'icon-link light-ibg': 'icon-link'} href="https://github.com/Einat-Sh/GameOfChatRooms" target="_blank" rel="noopener noreferrer" style={{color: darkMode?"white":"#515b70"}} ><FaGithub /></a>
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="d-flex justify-content-center" style={{ overflow: 'hidden' }}>

@@ -43,7 +43,7 @@ function App() {
               variant={darkMode ? "light" : "outline-dark"} data-testid="theme-button-test-id">
         {darkMode ? <FaSun/> : <FaMoon/>}
       </Button>
-      <div style={{ paddingTop: '55px' }}></div>
+      <div style={{ paddingTop: '50px' }}></div>
       {/* Body */}
       <main className="page-wrapper">
           <Routes>
