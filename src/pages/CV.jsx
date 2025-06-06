@@ -58,29 +58,23 @@ function CVPage() {
             <Row className="border-shadow">
                 <h1>Einat Shoval</h1>
                 <h5>DevOps Engineer</h5>
-                <p>I'm a passionate DevOps engineer with experience in automation, continuous integration/deployment and cloud infrastructure. 
-                <br/><br/>Currently I'm expanding expertise in cloud technologies, containerization, and CI/CD practices. Eager to learn more, develop and grow as an engineer.</p>
+                <span className='space'>I'm a passionate DevOps engineer with experience in automation, continuous integration/deployment and cloud infrastructure.</span>
+                <p>Currently I'm expanding expertise in cloud technologies, containerization, and CI/CD practices. Eager to learn more, develop and grow as an engineer.</p>
             </Row>
 
             {/* Projects */}
             <Row className="border-shadow">
                 <h2 style={{padding: "1%"}}><MdCode/> Projects</h2>
-                
-                <Carousel className="w-100 text-center" data-bs-theme="dark" interval={null} data-testid='project-crsl-test-id' >
+                <div style={{width: '100%', margin: '0', padding: '0'}}>
+                <Carousel className="w-100 text-center" data-bs-theme="dark" interval={null} data-testid='project-crsl-test-id' style={{width: '100%'}} >
                     <Carousel.Item data-testid='card-1-test-id' >
                         <Card className="text-center" id={darkMode ? "card-dark" : "card-light"} data-testid='carousel-card'>
                             <Card.Body>
-                                <Card.Title>My Site </Card.Title>
+                                <Card.Title>My Site</Card.Title>
                                 <Card.Text>
-                                    <p className='p-space'>
-                                        A simple, responsive CV website built with Next.js and Vite.
-                                    </p>
-                                    <p className='p-space'>
-                                        The site deployed to GitHub pages using GitHub actions.
-                                    </p>
-                                    <p className='p-space'>
-                                        Following the build stage, both lint tests and jest tests are run before deployment is done.
-                                    </p>
+                                    <span className='space'>A simple, responsive CV website built with Next.js and Vite.</span>
+                                    <span className='space'>The site deployed to GitHub pages using GitHub actions.</span>
+                                    <span className='space'>Following the build stage, both lint tests and jest tests are run before deployment is done.</span>
                                     <a className={darkMode ? 'icon-link light-ibg': 'icon-link'} href="https://github.com/Einat-Sh/my-site" target="_blank" rel="noopener noreferrer" ><FaGithub /></a>
                                 </Card.Text>
                             </Card.Body>
@@ -94,10 +88,9 @@ function CVPage() {
                             <Card.Body>
                                 <Card.Title>Chatroom</Card.Title>
                                 <Card.Text>
-                                    Simple .NET Windows application in C# for a chatroom.
-                                    <br/><br/>
-                                    UI framework used: Windows Presentation Foundation (WPF).
-                                    <br/><br/><a className={darkMode ? 'icon-link light-ibg': 'icon-link'} href="https://github.com/Einat-Sh/GameOfChatRooms" target="_blank" rel="noopener noreferrer" style={{color: darkMode?"white":"#515b70"}} ><FaGithub /></a>
+                                <span className='space'>Simple Windows application created with C# for a chatroom.</span>
+                                <span className='space'>UI framework used: Windows Presentation Foundation (WPF).</span>
+                                <a className={darkMode ? 'icon-link light-ibg': 'icon-link'} href="https://github.com/Einat-Sh/GameOfChatRooms" target="_blank" rel="noopener noreferrer" style={{color: darkMode?"white":"#515b70"}} ><FaGithub /></a>
                                 </Card.Text>
                             </Card.Body>
                             <Card.Footer className="d-flex justify-content-center" style={{ overflow: 'hidden' }}>
@@ -106,6 +99,7 @@ function CVPage() {
                         </Card>
                     </Carousel.Item>
                 </Carousel>
+                </div>
             </Row>
 
             {/* Experience */}
@@ -118,12 +112,10 @@ function CVPage() {
                         </Col>
                         <Col className='text-start'>
                             <h4>DevOps Engineer - Yahoo</h4>
-                            <p>
-                                Managed the building, maintenance and continuous development of CI/CD pipelines.
-                                <br/><br/>Assisted with the first migration from on-premises to AWS EKS. 
-                                <br/><br/>Developed applications and tools to automate workflows and streamline operations for the team. 
-                            </p>
-                            <h6>Worked with:</h6><br/>
+                            <p className='space'>Managed the building, maintenance and continuous development of CI/CD pipelines.</p>
+                            <p className='space'>Assisted with the first migration from on-premises to AWS EKS. </p>
+                            <p className='space'>Developed applications and tools to automate workflows and streamline operations for the team.</p>
+                            <h6>Worked with:</h6>
                             <Stack direction="horizontal" gap={2} style={{fontSize: "18px", margin: '0 auto', flexWrap: 'wrap'}} className="justify-content-left">
                                 {['Bash', 'Python', 'AWS', 'Docker', 'Kubernetes', 'Hadoop', 'Oozie', 'Yamas', 'Splunk', 'Git', 'Jira', 'ServiceNow', 'Screwdriver.cd'].map((i, index) => (<Badge bg="secondary" key={`stack1-${index}`}>{i}</Badge>))}
                             </Stack>
@@ -137,11 +129,9 @@ function CVPage() {
                         </Col>
                         <Col className='text-start'>
                             <h4>System Monitoring - Yahoo</h4>
-                            <p>
-                                Monitored and troubleshot a large scale and highly dynamic system in both the development and production environments.
-                                <br/><br/>Developed automated troubleshooting tools and assisted in developing new alerts and graphs
-                            </p>
-                            <h6>Worked with:</h6><br/>
+                            <p className='space'>Monitored and troubleshot a large scale and highly dynamic system in both the development and production environments.</p>
+                            <p className='space'>Developed automated troubleshooting tools and assisted in developing new alerts and graphs.</p>
+                            <h6>Worked with:</h6>
                             <Stack direction="horizontal" gap={2} style={{fontSize: "18px", margin: '0 auto', flexWrap: 'wrap'}} className="justify-content-left">
                                 {['Bash', 'Python', 'SQL', 'Hadoop', 'Oozie', 'Yamas', 'Splunk', 'Splunk', 'Git', 'Jira', 'ServiceNow', 'Screwdriver.cd'].map((i, index) => (<Badge bg="secondary" key={`stack2-${index}`}>{i}</Badge>))}
                             </Stack>

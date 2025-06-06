@@ -9,20 +9,34 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import CVPage from './pages/CV';
 import NotFoundPage from './pages/error404';
 import InfoPage from './pages/info';
-import { useTheme } from './context/useTheme'
+import { useTheme } from './context/useTheme';
+import { useState } from 'react';
 
 function App() {
   const { darkMode, toggleDarkMode } = useTheme();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleNavLinkClick = () => {
+    setExpanded(false); // Collapse navbar
+  };
 
   const NavigationBar = () => (
-    <Navbar fixed="top" expand="lg" className="bg-body-tertiary" bg={darkMode ? "dark" : "light"} data-bs-theme={darkMode ? "dark" : "light"} style={{opacity: "95%"}} data-testid="navbar-test-id">
+    <Navbar collapseOnSelect expanded={expanded} fixed="top" expand="lg" className="bg-body-tertiary" bg={darkMode ? "dark" : "light"} data-bs-theme={darkMode ? "dark" : "light"} style={{opacity: "95%"}} data-testid="navbar-test-id">
       <Container>
         <Navbar.Brand as={NavLink} to="/">My Site</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle 
+          aria-controls="responsive-navbar-nav" 
+          onClick={
+            (e) => {
+              e.currentTarget.blur();
+              setExpanded((prev) => !prev);
+            }
+          }
+        />
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/">Home</Nav.Link>
-            <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+            <Nav.Link as={NavLink} to="/" onClick={handleNavLinkClick}>Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/about" onClick={handleNavLinkClick}>About</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
